@@ -1,0 +1,25 @@
+{
+  "name": "jQuery DrawSVG",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lcdsantos/jquery-drawsvg",
+  "authors": [
+    "Leonardo Santos <leocs.1991@gmail.com>"
+  ],
+  "description": "Lightweight, simple to use jQuery plugin to animate SVG paths",
+  "main": "public/jquery.drawsvg.js",
+  "keywords": [
+    "svg",
+    "path",
+    "animation",
+    "draw",
+    "transition"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
