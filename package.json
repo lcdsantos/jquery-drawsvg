@@ -12,7 +12,9 @@
     "svg",
     "animate",
     "animation",
-    "path"
+    "path",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "docs": "http://lcdsantos.github.io/jquery-drawsvg/",
   "demo": "http://lcdsantos.github.io/jquery-drawsvg/demo",
