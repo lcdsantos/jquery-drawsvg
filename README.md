@@ -36,7 +36,7 @@ Look at the demos for more advanced usages.
 | ---------- | -------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `duration` | Integer  | `1000`          | The time to complete the animation of each path.                                                                                                             |
 | `stagger`  | Integer  | `200`           | Delay to start animating each individual path.                                                                                                               |
-| `easing`   | String   | `swing`         | Which easing function each path will use to transition. Use [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) for different easing functions. |
+| `easing`   | String   | `swing`         | Which easing function each path will use to transition. <br> Use [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/) for different easing functions. |
 | `reverse`  | Boolean  | `false`         | Direction that the line will be drawn.                                                                                                                       |
 | `callback` | Function | `function() {}` | A function to call once the animation has been completed. |
 
