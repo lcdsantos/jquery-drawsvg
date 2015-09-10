@@ -9,20 +9,20 @@ This plugin uses the jQuery built-in animation engine to transition the `stroke`
 
 ## Usage
 
-1. Include jQuery DrawSVG after jQuery
+Include jQuery DrawSVG after jQuery
 
 ```html
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="jquery.drawsvg.js"></script>
 ```
 
-2. Initialize the plugin on the <svg> element you want to animate and store in a variable
+Initialize the plugin on the <svg> element you want to animate and store in a variable
 
 ```js
 var mySVG = $('#my_svg_element').drawsvg();
 ```
 
-3. Run the animation
+Run the animation
 
 ```js
 mySVG.drawsvg('animate');
