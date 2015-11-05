@@ -11,7 +11,7 @@ var getPackageJson = function() {
 ======================================*/
 gulp.task('bump', function() {
   var pkg = getPackageJson(),
-      newVersion = $.util.env.bump || pkg.version;
+      newVersion = $.util.env.version || pkg.version;
 
   return gulp.src(['./package.json', './bower.json'])
     .pipe($.bump({

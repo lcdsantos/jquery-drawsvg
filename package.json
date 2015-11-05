@@ -1,6 +1,6 @@
 {
   "name": "drawsvg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "jQuery DrawSVG",
   "author": {
     "email": "leocs.1991@gmail.com",
@@ -17,7 +17,7 @@
     "ecosystem:jquery"
   ],
   "docs": "http://lcdsantos.github.io/jquery-drawsvg/",
-  "demo": "http://lcdsantos.github.io/jquery-drawsvg/demo",
+  "demo": "http://lcdsantos.github.io/jquery-drawsvg/#demos",
   "bugs": "https://github.com/lcdsantos/jquery-drawsvg/issues",
   "homepage": "http://lcdsantos.github.io/jquery-drawsvg/",
   "repository": {
