@@ -60,8 +60,6 @@ a {
 }
 
 .btn:hover {
-  /* background: rgba(255, 255, 255, 0.1);
-  color: #FFF; */
   background: #FFF;
   border-color: #3f51b5;
   color: #3F51B5;
@@ -115,6 +113,7 @@ header li a:hover {
   background: #3f51b5;
   text-align: center;
   width: 100%;
+  height: 900px;
   height: 100vh;
   position: relative;
 }
@@ -211,10 +210,7 @@ header li a:hover {
   -webkit-transition: .6s;
           transition: .6s;
   opacity: 0;
-  -webkit-transform: translate3d(0, 30px, 0);
-      -ms-transform: translate3d(0, 30px, 0);
-       -o-transform: translate3d(0, 30px, 0);
-          transform: translate3d(0, 30px, 0);
+  top: 30px;
 }
 
 @-webkit-keyframes comeIn {
@@ -258,9 +254,10 @@ header li a:hover {
 }
 
 .intro .item.active {
+  top: 0;
   opacity: 1;
-  -webkit-animation: comeIn .6s forwards;
-          animation: comeIn .6s forwards;
+  -webkit-animation: comeIn .6s;
+          animation: comeIn .6s;
 }
 
 .intro .item svg {
@@ -280,7 +277,6 @@ header li a:hover {
   zoom: 1;
   *display: inline;
   margin: 0 5px;
-  /*width: 90px;*/
 }
 
 .social-buttons a {

@@ -1,5 +1,5 @@
 /*!
- * jQuery DrawSVG v1.0.0 (Sep 10 2015) - http://lcdsantos.github.io/jquery-drawsvg/
+ * jQuery DrawSVG v1.0.1 (Nov 05 2015) - http://lcdsantos.github.io/jquery-drawsvg/
  *
  * Copyright (c) 2015 Leonardo Santos; MIT License
  *
@@ -50,7 +50,7 @@
           return 1 - $.easing[easing](p, p, 0, 1, 1);
         };
 
-        fn.prototype.progress = function progress(progress) {
+        fn.prototype.progress = function progress(prog) {
           var _this = this,
               opts = _this.options,
               length = _this.$paths.length,
@@ -60,12 +60,12 @@
           _this.$paths.each(function(index, elm) {
             var elmStyle = elm.style;
 
-            if ( progress === 1 ) {
+            if ( prog === 1 ) {
               elmStyle.strokeDashoffset = 0;
-            } else if ( progress === 0 ) {
+            } else if ( prog === 0 ) {
               elmStyle.strokeDashoffset = elm.pathLen + 'px';
-            } else if ( progress >= elm.delay && progress <= duration + elm.delay ) {
-              var p = ((progress - elm.delay) / duration);
+            } else if ( prog >= elm.delay && prog <= duration + elm.delay ) {
+              var p = ((prog - elm.delay) / duration);
               elmStyle.strokeDashoffset = ((_this.getVal(p, opts.easing) * elm.pathLen) * (opts.reverse ? -1 : 1)) + 'px';
             }
           });
@@ -105,9 +105,8 @@
     return this.each(function() {
       var data = $.data(this, pluginName);
 
-      if ( data && ''+method === method && data[method] )
-        data[method](args);
-      else
+      ( data && ''+method === method && data[method] ) ?
+        data[method](args) :
         $.data(this, pluginName, new DrawSvg(this, method));
     });
   };
