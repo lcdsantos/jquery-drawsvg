@@ -1,0 +1,7 @@
+name: lcdsantos/jquery-drawsvg
+author:
+  name: Leonardo Santos
+  email: leocs.1991@gmail.com
+  url: null
+copyright: 2015 Leonardo Santos
+description: 'Lightweight, simple to use jQuery plugin to animate SVG paths'
