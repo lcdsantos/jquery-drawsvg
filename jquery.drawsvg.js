@@ -1,11 +1,32 @@
 /*!
- * jQuery DrawSVG v1.0.1 (Nov 05 2015) - http://lcdsantos.github.io/jquery-drawsvg/
+ * jQuery DrawSVG v1.1.0 (Oct 05 2016) - http://lcdsantos.github.io/jquery-drawsvg/
  *
- * Copyright (c) 2015 Leonardo Santos; MIT License
+ * Copyright (c) 2016 Leonardo Santos; MIT License
  *
  */
 
-(function($) {
+(function(factory) {
+  /* global define */
+  if ( typeof define === 'function' && define.amd ) {
+    define(['jquery'], factory);
+  } else if ( typeof module === 'object' && module.exports ) {
+    // Node/CommonJS
+    module.exports = function( root, jQuery ) {
+      if ( jQuery === undefined ) {
+        if ( typeof window !== 'undefined' ) {
+          jQuery = require('jquery');
+        } else {
+          jQuery = require('jquery')(root);
+        }
+      }
+      factory(jQuery);
+      return jQuery;
+    };
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+}(function($) {
   'use strict';
 
   var pluginName = 'drawsvg',
@@ -53,9 +74,7 @@
         fn.prototype.progress = function progress(prog) {
           var _this = this,
               opts = _this.options,
-              length = _this.$paths.length,
-              duration = _this.duration,
-              stagger = opts.stagger;
+              duration = _this.duration;
 
           _this.$paths.each(function(index, elm) {
             var elmStyle = elm.style;
@@ -110,4 +129,4 @@
         $.data(this, pluginName, new DrawSvg(this, method));
     });
   };
-}(jQuery));
+}));
