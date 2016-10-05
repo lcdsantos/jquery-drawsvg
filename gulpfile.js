@@ -1,17 +1,17 @@
-var gulp = require('gulp'),
-    $    = require('gulp-load-plugins')(),
-    fs   = require('fs');
+var gulp = require('gulp');
+var $    = require('gulp-load-plugins')();
+var fs   = require('fs');
 
 var getPackageJson = function() {
-      return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-    };
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+};
 
 /*======================================
   Bump version
 ======================================*/
 gulp.task('bump', function() {
-  var pkg = getPackageJson(),
-      newVersion = $.util.env.version || pkg.version;
+  var pkg = getPackageJson();
+  var newVersion = $.util.env.version || pkg.version;
 
   return gulp.src(['./package.json', './bower.json'])
     .pipe($.bump({
@@ -21,18 +21,18 @@ gulp.task('bump', function() {
 });
 
 /*======================================
-  Javascript
+  JavaScript
 ======================================*/
 gulp.task('js', ['bump'], function() {
-  var pkg = getPackageJson(),
-      banner = [
-        '/*!',
-        ' * jQuery DrawSVG v<%= pkg.version %> (<%= new Date().toString().substr(4, 11) %>) - http://lcdsantos.github.io/jquery-drawsvg/',
-        ' *',
-        ' * Copyright (c) <%= new Date().getFullYear() %> Leonardo Santos; MIT License',
-        ' *',
-        ' */\n\n'
-      ].join('\n');
+  var pkg = getPackageJson();
+  var banner = [
+    '/*!',
+    ' * jQuery DrawSVG v<%= pkg.version %> (<%= new Date().toString().substr(4, 11) %>) - http://lcdsantos.github.io/jquery-drawsvg/',
+    ' *',
+    ' * Copyright (c) <%= new Date().getFullYear() %> Leonardo Santos; MIT License',
+    ' *',
+    ' */\n\n'
+  ].join('\n');
 
   return gulp.src('src/jquery.drawsvg.js')
     .pipe($.plumber())
@@ -77,9 +77,9 @@ gulp.task('css', function() {
   Watch
 ======================================*/
 gulp.task('watch', ['serve'], function() {
-  gulp.watch(['./public/*.css'], ['css']);
-  gulp.watch(['./src/*.js'], ['js', 'js-min']);
-  gulp.watch(['./public/*.html'], ['html']);
+  gulp.watch(['*.css'],  { cwd: './public/' }, ['css']);
+  gulp.watch(['*.html'], { cwd: './public/' }, ['html']);
+  gulp.watch(['*.js'],   { cwd: './src/' },    ['js', 'js-min']);
 });
 
 /*======================================
@@ -104,7 +104,7 @@ gulp.task('gh-pages', function() {
 /*======================================
   Default tasks
 ======================================*/
-gulp.task('build', ['js', 'js-min']);
+gulp.task('build',   ['js', 'js-min']);
 gulp.task('default', ['build', 'watch']);
 gulp.task('release', ['bump', 'build', 'zip']);
 gulp.task('publish', ['gh-pages']);
