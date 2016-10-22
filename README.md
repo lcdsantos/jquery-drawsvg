@@ -2,7 +2,7 @@
 
 This plugin uses the jQuery built-in animation engine to transition the `stroke` on every `<path>` inside the selected `<svg>` element, using `stroke-dasharray` and `stroke-dashoffset` properties.
 
-* Weights less than 2KB minified and 800 bytes gzipped.
+* Weighs less than 2KB minified and 800 bytes gzipped.
 * Easy to use.
 * Easing and stagger support.
 * Free!
